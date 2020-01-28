@@ -1,0 +1,15 @@
+createorreplaceprocedureproc_grade (tempinnumber, p_rol_nooutstud_marks.rol%type, p_nameoutstud_marks.namee%type, p_totaloutstud_marks.total_marks%type) as
+begin selectnamee,total_marks,rolintop_name,p_total,p_rol_nofromstud_markswhererol=temp;
+ifp_total<=1500andp_total>=990then insertintores_123values(p_rol_no,p_name,'distinction'); elseifp_total<=989andp_total>=900then
+insertintores_123values(p_rol_no,p_name,'firstclas'); elseifp_total<=899andp_total>=825then
+insertintores_123values(p_rol_no,p_name,'HSC'); else
+insertintores_123values(p_rol_no,p_name,'fail'); endif;
+endif;
+endif;
+exception
+whenno_data_foundthen
+dbm s_output.put_line('Rol lno '| |tem p | |' notfound'); end;
+Declare
+tempnumber(20); p_rol_nostud_marks.rol%type; p_namestud_marks.namee%type; p_totalstud_marks.total_marks%type; Begin
+temp:=&temp; Proc_grade(temp,p_rol_no,p_name,p_total); End;
+Select*fromstud_marks; createtableres_123(Rol_noint,Namevarchar2(20),clasvarchar2(20); select*fromres_123;
